@@ -1,5 +1,6 @@
-learnjdk8.iml
-learnjdk8.ipr
+*.iml
+*.ipr
 learnjdk8.iws
 projectFilesBackup/
 target/
+.idea/
