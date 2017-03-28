@@ -1,5 +1,6 @@
 package com.jayden.basic;
 
+import org.apache.log4j.spi.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
