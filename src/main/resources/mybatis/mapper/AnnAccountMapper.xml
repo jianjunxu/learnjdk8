@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jayden.basic.mapper.AnnAccountMapper">
+    <resultMap id="BaseResultMap" type="com.jayden.basic.domain.AnnAccountDO" >
+        <id column="id" property="id" jdbcType="BIGINT" />
+        <result column="accountAddress" property="accountAddress" jdbcType="VARCHAR" />
+        <result column="accountPrivkeyCode" property="accountPrivkeyCode" jdbcType="VARCHAR" />
+        <result column="accountCreateTime" property="accountCreateTime" javaType="Date"/>
+    </resultMap>
+    <sql id="Base_Column_List" >
+        id, accountAddress, accountPrivkeyCode, accountCreateTime
+    </sql>
+    <select id="getAnnAccountList" resultMap="BaseResultMap"  >
+        SELECT
+        <include refid="Base_Column_List" />
+        FROM ann_account limit 1
+    </select>
+</mapper>
