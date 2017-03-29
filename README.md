@@ -146,3 +146,39 @@
     
     ```
     
+## _三、spring-boot整合mybatis(最简版)_
++ ### 1 依赖
+    ```
+    <dependency>
+        <groupId>org.mybatis.spring.boot</groupId>
+        <artifactId>mybatis-spring-boot-starter</artifactId>
+        <version>1.1.1</version>
+    </dependency>
+    <dependency>
+        <groupId>mysql</groupId>
+        <artifactId>mysql-connector-java</artifactId>
+    </dependency>
+    ```
++ ### 2 dao接口与mapper定义
+    + _接口名与mapper文件名同名_
+    + _mapper文件放在resources目录下_
+    + _mapper文件相当于接口实现_
++ ### 3 配置
+    + _准备mybatis配置文件（mybatis-config.xml） 在resources目录下_
+    + _application.properties配置文件为spring-boot启动默认加载的配置文件，在配置文件中加入db连接与mybatis相关配置，如下：_
+        ```
+        mybatis.config-locations=classpath:mybatis/mybatis-config.xml
+        mybatis.mapper-locations=classpath:mybatis/mapper/*.xml
+        mybatis.type-aliases-package=com.jayden.basic.domain
+        
+        spring.datasource.driverClassName = com.mysql.jdbc.Driver
+        spring.datasource.url = jdbc:mysql://localhost:3306/xxx?useUnicode=true&characterEncoding=utf-8
+        spring.datasource.username = xxx
+        spring.datasource.password = xxx
+        ```
++ ### 4 启动类配置
+    + _在spring-boot启动类中配置注解@MapperScan("com.jayden.basic.mapper")_
+    + _注解中指定扫描mapper接口所在包_
+    
++ ### 5 单元测试
+    + _在测试源文件中添加与mapper接口同样的包_
