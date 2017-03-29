@@ -114,3 +114,35 @@
     ```
     http://localhost:8080/helloworld
     ```
+    
+## _二、热部署_
++ ### 1 配置
+    
+    ```
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-devtools</artifactId>
+        <optional>true</optional>
+    </dependency>
+    
+    <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+        <configuration>
+            <fork>true</fork>
+        </configuration>
+    </plugin>
+    ```
++ ### 2 Idea 不生效问题解决
+    ```
+    第一步：
+    Build,Execution,Deployment 
+        --> compiler 
+            --> 勾选Build project automatically
+    第二步：
+    Shift+Ctrl+Alt+/
+        --> 选择1.Registry..
+            --> 找到compiler.automake...running勾选
+    
+    ```
+    
