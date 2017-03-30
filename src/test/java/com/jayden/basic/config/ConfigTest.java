@@ -1,4 +1,4 @@
-package com.jayden.test.config;
+package com.jayden.basic.config;
 
 import com.jayden.basic.Application;
 import org.junit.Test;
