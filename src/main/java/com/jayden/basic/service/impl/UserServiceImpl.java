@@ -13,7 +13,7 @@ public class UserServiceImpl implements UserService {
 
     //使用缓存
     @Override
-    @Cacheable(value = "userCache",keyGenerator = "wiselyKeyGenerator")
+    @Cacheable(value = "userCache", keyGenerator = "wiselyKeyGenerator")
     public UserDO findUser(long id) {
         System.out.println("无缓存的时候调用这里");
         UserDO user = new UserDO();
