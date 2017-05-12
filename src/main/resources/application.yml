@@ -10,6 +10,7 @@ mybatis:
   type-aliases-package: com.jayden.basic.domain
 
 # spring datasource
+# prod:生产环境 test:测试环境 dev:开发环境
 spring:
   datasource:
     driverClassName: com.mysql.jdbc.Driver
@@ -17,4 +18,8 @@ spring:
     username: zcloud_user_tst
     password: zcloud_user_tst_b21fe3
   profiles:
-    active: test # prod:生产环境 test:测试环境 dev:开发环境
+    active: test
+  redis:
+    host: 10.253.2.170
+    port: 6379
+    password:
